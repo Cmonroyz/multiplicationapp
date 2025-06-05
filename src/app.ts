@@ -1,3 +1,7 @@
-const message: string = "Hello, TypeScript";
 
-console.log(message);
+
+console.log(process.argv);
+
+const [tsnode, app, ...args] = process.argv;
+
+console.log(args);
