@@ -1,7 +1,12 @@
 
+import { yarg } from '../src/config/plugin/args.plugin';
 
-console.log(process.argv);
 
-const [tsnode, app, ...args] = process.argv;
+(async() => {
+  await main();
+  console.log('fin del programa');
+})();
 
-console.log(args);
+async function main() {
+  console.log('Main ejecutando...');
+}
