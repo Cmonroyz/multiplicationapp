@@ -23,6 +23,18 @@ export const yarg = yargs(hideBin(process.argv))
   default: false,
   describe: 'Show the multiplication table in console',
 })
+.option('n', {
+  alias: 'name',
+  type: 'string',
+  default: 'multiplication-table',
+  describe: 'Name of the output file',
+})
+.option('d', {
+  alias: 'destination',
+  type: 'string',
+  default: 'outputs',
+  describe: 'Destination folder for the output file',
+})
 .check((argv, options) => {
   if (argv.b < 1) throw 'Base must be a positive number';
   return true;
