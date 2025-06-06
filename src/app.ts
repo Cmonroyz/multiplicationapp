@@ -8,5 +8,5 @@ import { yarg } from '../src/config/plugin/args.plugin';
 })();
 
 async function main() {
-  console.log('Main ejecutando...');
+  console.log( yarg );
 }
