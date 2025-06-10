@@ -29,7 +29,7 @@ export class SaveFile implements SaveFileUseCase {
       //console.log('File created');
       return true;
     } catch (error) {
-      console.error('Error creating file:', error);
+      //console.error('Error creating file:', error);
       return false;
     }
 

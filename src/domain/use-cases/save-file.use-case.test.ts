@@ -61,4 +61,19 @@ describe('SaveFileUseCase', () => {
     expect(fileContent).toBe(options.fileContent);
   });
 
+  test('shlould return false if directory cannot be created', () => {
+    const saveFile = new SaveFile();
+    const mkditrySpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(
+      () => { throw new Error('error');}
+    );
+
+    const result = saveFile.execute({
+      fileContent: 'test content',
+    })
+    const fileExists = fs.existsSync('outputs/table.txt');
+    expect(result).toBe(false);
+
+    mkditrySpy.mockRestore();
+  });
+
 });
